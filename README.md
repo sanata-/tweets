@@ -1,1 +1,4 @@
-Post tweets from terminal
+# Post tweets
+## from terminal
+Run
+`$ sh tweet`
