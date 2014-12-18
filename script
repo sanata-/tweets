@@ -16,11 +16,9 @@ elif [ "$tweets" == ""];
 fi
 touch "cookie.txt"   #add cookie file
 #LOGIN TOKENS
-echo "[+] Load twitter.com..." && sleep $sleeptime
-initpage=$(curl -s -b "cookie.txt" -c "cookie.txt" -L -A
+echo "[+] Load twitter.com..." && sleep $sleeptime initpage=$(curl -s -b "cookie.txt" -c "cookie.txt" -L -A
 "$uagent" "https://mobile.twitter.com/session/new")
-token=$(echo "$initpage" | grep "autenticity_token" |
-sed -e 's/.*value="//' | cut -d '""' -f 1)
+token=$(echo "$initpage" | grep "autenticity_token" | sed -e 's/.*value="//' | cut -d '""' -f 1)
 #CONNECT
 echo "[+] Submitting form.." && sleep $sleeptime
 loginpage=$(curl -s -b "cookie.txt" -c "cookie.txt" -L -A
