@@ -1,13 +1,14 @@
 #!bin/bash
-# Twitter status bot
+# Twitter Status Bot
 #
 #
 #MESSAGE PARAMETRS
-username="$1"
-password="$2"
-tweets="$3"
+
+username=$1
+password=$2
+tweets=$3
 #OPTIONS
-uagent="Mozilla/5.0" #fake browser
+uagent="Mozilla/4.0" #fake browser
 sleeptime=0          #pause between request
 if [ $(echo "$tweets" | wc -c) -gt 140 ];
   then echo "[ERROR] Less than 140, please!" && exit 1
